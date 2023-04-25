@@ -1,0 +1,136 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/attendance_table"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attendance"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teacher Name:"/>
+
+    <TextView
+        android:id="@+id/teacher_name_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_picker"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:inputType="none"
+                android:clickable="true"
+                android:background="@color/white"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_view_class_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="Class:"/>
+
+        <Spinner
+            android:id="@+id/spinner_class"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="0.2"
+            android:prompt="@string/class_prompt"
+            android:entries="@array/classes"/>
+
+        <TextView
+            android:id="@+id/text_view_section_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="Section:"/>
+
+        <Spinner
+            android:id="@+id/spinner_section"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="0.2"
+            android:prompt="@string/section_prompt"
+            android:entries="@array/section"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Students' list"
+        android:layout_marginTop="16dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:id="@+id/machine_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:divider="@drawable/table_row_divider"
+            android:showDividers="middle"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/table_vertical_divider"
+                android:showDividers="beginning|end">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Roll No."
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.7"
+                    android:text="Name"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Status"
+                    android:textStyle="bold"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+
+
+</TableLayout>
