@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Teacher Name:"/>
+        android:text="Teacher's Name:"/>
 
     <TextView
         android:id="@+id/teacher_name_textview"
@@ -36,7 +36,7 @@
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/date_picker"
-                android:layout_width="150dp"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:focusable="true"
                 android:inputType="none"
@@ -47,56 +47,91 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/text_view_class_label"
+            android:id="@+id/class_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
             android:text="Class:"/>
+        <TextView
+            android:id="@+id/text_view_class_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:text=""/>
 
         <Spinner
             android:id="@+id/spinner_class"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.15"
             android:prompt="@string/class_prompt"
-            android:entries="@array/classes"/>
-
+            android:entries="@array/classes"
+            />
         <TextView
-            android:id="@+id/text_view_section_label"
+            android:id="@+id/section_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
             android:text="Section:"/>
 
+        <TextView
+            android:id="@+id/text_view_section_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:text=""/>
+
         <Spinner
             android:id="@+id/spinner_section"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.18"
             android:prompt="@string/section_prompt"
             android:entries="@array/section"/>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/search_button"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get Students' list"
-        android:layout_marginTop="16dp"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:text="List"
+            android:layout_marginTop="10dp"
+            />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:text="Submit "
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <TableLayout
-            android:id="@+id/machine_table"
+            android:id="@+id/attendance1_table"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:divider="@drawable/table_row_divider"
             android:showDividers="middle"
-            android:stretchColumns="*">
+            android:stretchColumns="*"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -107,30 +142,31 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:text="Roll No."
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2.7"
+                    android:layout_weight="3.2"
                     android:text="Name"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:text="Status"
-                    android:textStyle="bold"/>
-
+                    android:textStyle="bold"
+                    android:gravity="center"/>
             </TableRow>
 
         </TableLayout>
 
     </ScrollView>
-
 
 
 </TableLayout>
